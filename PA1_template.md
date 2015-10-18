@@ -1,5 +1,10 @@
 # Reproducible Research: Peer Assessment 1
+Set options (figure folder)
 
+```r
+library(knitr)
+opts_chunk$set(fig.path = "figure/")
+```
 
 ## Loading and preprocessing the data
 
@@ -20,7 +25,7 @@ And create a histogram for total number of steps per day
 hist(total_steps_per_day, xlab = "Total Steps per Day", main = "Histogram of Total Steps per Day")
 ```
 
-![](PA1_template_files/figure-html/unnamed-chunk-3-1.png) 
+![](figure/unnamed-chunk-4-1.png) 
 
 Useful inforamtion about total steps per day
 
@@ -47,7 +52,7 @@ plot(names(average_steps_by_interval), average_steps_by_interval, type="l", xlab
 abline(v = names(which.max(average_steps_by_interval)), col = "red")
 ```
 
-![](PA1_template_files/figure-html/unnamed-chunk-6-1.png) 
+![](figure/unnamed-chunk-7-1.png) 
 
 Interval with max value corresponds to next time
 
@@ -189,7 +194,7 @@ And create a histogram for total number of mean steps per day
 hist(total_mean_steps_per_day, xlab = "Total Steps per Day", main = "Histogram of Total Mean Steps per Day")
 ```
 
-![](PA1_template_files/figure-html/unnamed-chunk-13-1.png) 
+![](figure/unnamed-chunk-14-1.png) 
 
 Useful inforamtion about total mean steps per day
 
@@ -266,4 +271,4 @@ by_interval_weekday <- group_by(mean_data, interval, weekday) %>%
 qplot(x = interval, y = steps, geom = "line", data = by_interval_weekday, facets = weekday ~ . )
 ```
 
-![](PA1_template_files/figure-html/unnamed-chunk-17-1.png) 
+![](figure/unnamed-chunk-18-1.png) 

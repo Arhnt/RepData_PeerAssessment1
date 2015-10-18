@@ -4,7 +4,11 @@ output:
   html_document:
     keep_md: true
 ---
-
+Set options (figure folder)
+```{r}
+library(knitr)
+opts_chunk$set(fig.path = "figure/")
+```
 
 ## Loading and preprocessing the data
 ```{r}
